@@ -7,13 +7,18 @@ function getModifyString (str) {
     if (item === arr[i + 1]) {
       count++;
     } else if (i === arr.length - 1) {
-      str2 += item + count;
+      str2 += writeTheNumberOfCharacters(item, count);
     } else {
-      str2 += item + count;
+      str2 += writeTheNumberOfCharacters(item, count);
       count = 1;
     }
   });
   return str2;
+}
+
+function writeTheNumberOfCharacters (item, count) {
+  return item + count;
+
 }
 
 console.assert(getModifyString('aaabbdcccccf') === 'a3b2d1c5f1', 'Actual result: %s', getModifyString('aaabbdcccccf'));
